@@ -20,6 +20,6 @@ spec:
           image: "{{ui.image}}"
           env:
           - name: "API_URL"
-            value: "{{(api.svc_name + '.' + cluster_domain).split(':')[0] }}"
+            value: "http://{{(api.svc_name + '.' + cluster_domain).split(':')[0] }}"
           ports:
             - containerPort: {{ui.port}}
