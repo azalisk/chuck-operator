@@ -1,0 +1,15 @@
+- include_vars: ../../pg/vars/main.yml
+
+- name: Deploy app configs
+  include_role:
+    name: common
+    tasks_from: install
+  vars:
+    template_path: "{{ item }}"
+    state: "{{ role_state }}"
+  with_items:
+    - templates/conf/secret.yml
+    
+
+
+

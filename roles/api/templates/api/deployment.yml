@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{api.svc_name}}"
+  namespace: "{{ ansible_operator_meta.namespace }}"
+  labels:
+    app: "{{api.svc_name}}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "{{api.svc_name}}"
+  template:
+    metadata:
+      labels:
+        app: "{{api.svc_name}}"
+    spec:
+      containers:
+        - name: "{{api.svc_name}}"
+          image: "{{api.image}}"
+          ports:
+            - containerPort: {{api.port}}
+          env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: "prod"
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: env-secrets
+                key: POSTGRES_USER
+          - name: DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: env-secrets
+                key: POSTGRES_PASSWORD
+          - name: POSTGRESQL_ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: env-secrets
+                key: POSTGRES_PASSWORD
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: env-secrets
+                key: POSTGRES_HOST

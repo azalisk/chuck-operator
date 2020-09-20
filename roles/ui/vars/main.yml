@@ -1,0 +1,7 @@
+---
+ui:
+  enabled: "true"
+  image: "docker.io/dimssss/chuck-ui:latest"
+  svc_name: "ui"
+  port: 3000
+

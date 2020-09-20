@@ -1,0 +1,25 @@
+uiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ui.svc_name}}"
+  namespace: "{{ ansible_operator_meta.namespace }}"
+  labels:
+    app: "{{ui.svc_name}}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "{{ui.svc_name}}"
+  template:
+    metadata:
+      labels:
+        app: "{{ui.svc_name}}"
+    spec:
+      containers:
+        - name: "{{ui.svc_name}}"
+          image: "{{ui.image}}"
+          env:
+          - name: "API_URL"
+            value: "{{(api.svc_name + '.' + cluster_domain).split(':')[0] }}"
+          ports:
+            - containerPort: {{ui.port}}

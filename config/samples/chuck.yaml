@@ -1,0 +1,7 @@
+apiVersion: hero.cnvrg.io/v1
+kind: Chuck
+metadata:
+  name: chuck-app
+  namespace: chuck
+spec:
+  clusterDomain: chuck.azops.cnvrg.io

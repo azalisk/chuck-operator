@@ -1,0 +1,11 @@
+uiVersion: v1
+kind: Service
+metadata:
+  name: "{{ui.svc_name}}"
+  namespace: "{{ ansible_operator_meta.namespace }}"
+spec:
+  selector:
+    app: "{{ui.svc_name}}"
+  ports:
+  - name: http
+    port: {{ui.port}}

@@ -1,0 +1,12 @@
+pg:
+  enabled: "true"
+  image: "centos/postgresql-12-centos7"
+  port: 5432
+  storage_size: "20Gi"
+  svc_name: "postgres"
+  dbname: "jokes_db"
+  pass: "pg_pass"
+  user: "chuck"
+  run_as_user: 26
+  run_as_group: 26
+  fs_group: 26

@@ -1,0 +1,40 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: "Include vars"
+      include_vars: "{{ item }}"
+      with_items:
+        - vars/globals.yml
+        - ../roles/conf/vars/main.yml
+        - ../roles/api/vars/main.yml
+        - ../roles/ui/vars/main.yml
+        - ../roles/pg/vars/main.yml
+      tags: always
+
+    # Chuck configs
+    - import_role:
+        name: conf
+      vars:
+        role_state: "{{'present' if conf.enabled == 'true' else 'absent'}}"
+      tags: conf
+
+    # Chuck PG
+    - import_role:
+        name: pg
+      vars:
+        role_state: "{{'present' if pg.enabled == 'true' else 'absent'}}"
+      tags: pg
+
+    # Chuck API
+    - import_role:
+        name: api
+      vars:
+        role_state: "{{'present' if api.enabled == 'true' else 'absent'}}"
+      tags: api
+
+    # Chuck UI
+    - import_role:
+        name: ui
+      vars:
+        role_state: "{{'present' if ui.enabled == 'true' else 'absent'}}"
+      tags: ui

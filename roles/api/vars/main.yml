@@ -1,0 +1,7 @@
+---
+api:
+  enabled: "true"
+  image: "docker.io/dimssss/chuck-api:v0.1"
+  svc_name: "api"
+  port: 8080
+

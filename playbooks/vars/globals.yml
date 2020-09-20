@@ -1,0 +1,11 @@
+# vars file for cnvrg
+debug: "false"
+dry_run: "false"
+cluster_domain: ""
+http_scheme: "{{ 'https://' if https.enabled == 'true' else 'http://' }}"
+
+
+
+
+
+

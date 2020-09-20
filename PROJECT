@@ -1,0 +1,8 @@
+domain: cnvrg.io
+layout: ansible.sdk.operatorframework.io/v1
+projectName: chuck-operator
+resources:
+- group: hero
+  kind: Chuck
+  version: v1
+version: 3-alpha

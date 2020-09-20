@@ -1,0 +1,12 @@
+# Install  PG
+- name: Install Chuck-API
+  include_role:
+    name: common
+    tasks_from: install
+  vars:
+    template_path: "{{ item }}"
+    state: "{{ role_state }}"
+  with_items:
+    - templates/api/service.yml
+    - templates/api/deployment.yml
+    - templates/api/ingress.yml

@@ -1,0 +1,7 @@
+---
+# Use the 'create api' subcommand to add watches to this file.
+- version: v1
+  group: hero.cnvrg.io
+  kind: Chuck
+  playbook: playbooks/chuck.yml
+# +kubebuilder:scaffold:watch
