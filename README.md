@@ -1,6 +1,7 @@
 # Chuck Norris jokes operator 
 
 ### `chuck-operator` deploy the following stack 
+![alt text](./config/samples/chuck-operator.png)
 
 
 Run locally 
