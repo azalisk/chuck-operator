@@ -1,3 +1,8 @@
+# Chuck Norris jokes operator 
+
+### `chuck-operator` deploy the following stack 
+
+
 Run locally 
 
 ```bash
