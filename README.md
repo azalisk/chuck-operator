@@ -19,7 +19,7 @@
 
 
 ### Accomplish the following tasks 
-1. Currently the application is failing to deploy. Find the issue and apply the fix to `chuck-operator` (fork the repo)
+1. Currently the application is failing to deploy. Find the issue and apply the fix to `chuck-operator` (fork the repo,apply changes, build and deploy a new image, etc.)
 2. Improve the `chuck-operator` to follow best cloud/k8s native patterns. Apply the fixes to `chuck-operator` at your current fork. 
  
  ### Outcomes
