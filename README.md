@@ -7,7 +7,7 @@
 1. Install [make](https://man7.org/linux/man-pages/man1/make.1.html)
 2. Build operator image `IMG="<SET-YOUR-IMAGE-NAME>" make docker-build && IMG="<SET-YOUR-IMAGE-NAME>" make docker-push`
 3. Deploy new operator image `IMG="<SET-YOUR-IMAGE-NAME>" make deploy` 
-4. Create chuck CR instance `kubectl create -f ./config/samples/chuck.yml` (update `clusterDomain: chuck.azops.cnvrg.io` to the valid domain)
+4. Create chuck CR instance `kubectl create -f ./config/samples/chuck.yaml` (update `clusterDomain: chuck.azops.cnvrg.io` to the valid domain)
 5. Remove deployment `IMG="<SET-YOUR-IMAGE-NAME>" make undeploy`
 
 ### Development

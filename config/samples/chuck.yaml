@@ -4,4 +4,4 @@ metadata:
   name: chuck-app
   namespace: chuck
 spec:
-  clusterDomain: chuck.azops.cnvrg.io
+  clusterDomain: ivm1.azops.cnvrg.io
