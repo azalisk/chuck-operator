@@ -12,7 +12,7 @@ endif
 BUNDLE_METADATA_OPTS ?= $(BUNDLE_CHANNELS) $(BUNDLE_DEFAULT_CHANNEL)
 
 # Image URL to use all building/pushing image targets
-IMG ?= docker.io/dimssss/chuck-operator:latest
+IMG ?= docker.io/azalisk/chuck-operator:latest
 
 all: docker-build
 
